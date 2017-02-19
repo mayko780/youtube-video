@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/mayko780/youtube-video/issues"
   },
-  "homepage": "https://github.com/mayko780/youtube-video#readme"
+  "homepage": "https://github.com/mayko780/youtube-video#readme",
+  "dependencies": {
+    "jquery": "^3.1.1"
+  }
 }
