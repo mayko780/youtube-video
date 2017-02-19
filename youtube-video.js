@@ -1,7 +1,7 @@
 (function() {
   window.YoutubeVideo = function(id, callback) {
     return $.ajax({
-      url: "http://www.youtube.com/get_video_info?video_id=" + id,
+      url: "//www.youtube.com/get_video_info?video_id=" + id,
       dataType: "text"
     }).done(function(video_info) {
       var video;
