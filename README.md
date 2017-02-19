@@ -1,15 +1,9 @@
 # YoutubeVideo
 
-## Intro
-
 A Javascript library to access the WebM (and other) streams for Youtube Videos.
 
-This is a little script we've extracted from http://omgig.com
- to directly access the WebM (and other formats) streams for Youtube Videos.
-
-## Dependencies
-
-- jQuery
+Refactored code from:
+https://github.com/endlesshack/youtube-video
 
 ## Usage
 

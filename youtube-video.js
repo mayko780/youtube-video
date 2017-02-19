@@ -30,33 +30,33 @@ export default function(id, callback) {
     };
     return callback(video);
   });
-};
 
-function decodeQueryString(queryString) {
-  var key, keyValPair, keyValPairs, r, val, _i, _len;
-  r = {};
-  keyValPairs = queryString.split("&");
-  for (_i = 0, _len = keyValPairs.length; _i < _len; _i++) {
-    keyValPair = keyValPairs[_i];
-    key = decodeURIComponent(keyValPair.split("=")[0]);
-    val = decodeURIComponent(keyValPair.split("=")[1] || "");
-    r[key] = val;
-  }
-  return r;
-};
+  function decodeQueryString(queryString) {
+    var key, keyValPair, keyValPairs, r, val, _i, _len;
+    r = {};
+    keyValPairs = queryString.split("&");
+    for (_i = 0, _len = keyValPairs.length; _i < _len; _i++) {
+      keyValPair = keyValPairs[_i];
+      key = decodeURIComponent(keyValPair.split("=")[0]);
+      val = decodeURIComponent(keyValPair.split("=")[1] || "");
+      r[key] = val;
+    }
+    return r;
+  };
 
-function decodeStreamMap(url_encoded_fmt_stream_map) {
-  var quality, sources, stream, type, urlEncodedStream, _i, _len, _ref;
-  sources = {};
-  _ref = url_encoded_fmt_stream_map.split(",");
-  for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-    urlEncodedStream = _ref[_i];
-    stream = decodeQueryString(urlEncodedStream);
-    type = stream.type.split(";")[0];
-    quality = stream.quality.split(",")[0];
-    stream.original_url = stream.url;
-    stream.url = "" + stream.url + "&signature=" + stream.sig;
-    sources["" + type + " " + quality] = stream;
-  }
-  return sources;
+  function decodeStreamMap(url_encoded_fmt_stream_map) {
+    var quality, sources, stream, type, urlEncodedStream, _i, _len, _ref;
+    sources = {};
+    _ref = url_encoded_fmt_stream_map.split(",");
+    for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+      urlEncodedStream = _ref[_i];
+      stream = decodeQueryString(urlEncodedStream);
+      type = stream.type.split(";")[0];
+      quality = stream.quality.split(",")[0];
+      stream.original_url = stream.url;
+      stream.url = "" + stream.url + "&signature=" + stream.sig;
+      sources["" + type + " " + quality] = stream;
+    }
+    return sources;
+  };
 };
