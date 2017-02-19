@@ -1,17 +1,16 @@
 {
   "name": "mayko780-youtube-video",
-  "version": "1.0.3",
-  "description": "## Intro",
-  "main": "youtube-video.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "version": "1.0.4",
+  "description": "Get YouTube video for HTML video-tag",
+  "files": [
+    "index.js"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mayko780/youtube-video.git"
   },
   "author": "Mirko May <mail@mirkomay.com> (http://mirkomay.com)",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/mayko780/youtube-video/issues"
   },
